@@ -29,3 +29,10 @@ d7adff,127.0.0.1,GET,http://127.0.0.1/My/web/app_dev.php/,1394743910,
 30f651,127.0.0.1,GET,http://127.0.0.1/My/web/app_dev.php/,1394743930,df7041
 df7041,127.0.0.1,GET,http://127.0.0.1/My/web/app_dev.php/,1394743930,
 f808e4,127.0.0.1,GET,http://127.0.0.1/My/web/app_dev.php/login,1394743948,
+54a25d,127.0.0.1,GET,http://localhost/My/web/app_dev.php/,1394758371,106d9f
+106d9f,127.0.0.1,GET,http://localhost/My/web/app_dev.php/,1394758372,
+f702ec,127.0.0.1,GET,http://localhost/My/web/app_dev.php/hello/%7Bname%7D,1394758418,
+750763,127.0.0.1,GET,http://localhost/My/web/app_dev.php/hello/y,1394758423,
+6ea0a7,127.0.0.1,GET,http://localhost/My/web/app_dev.php/login,1394758432,
+2d99d3,127.0.0.1,POST,http://localhost/My/web/app_dev.php/login_check,1394758600,
+4f729b,127.0.0.1,GET,http://localhost/My/web/app_dev.php/login,1394758601,
