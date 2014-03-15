@@ -62,7 +62,12 @@ class Membre
      * @ORM\Column(name="date_naissance", type="date")
      */
     private $dateNaissance;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="My\UserBundle\Entity\Ville")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $ville;
 
     /**
      * Get id
@@ -210,5 +215,28 @@ class Membre
     public function getDateNaissance()
     {
         return $this->dateNaissance;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param \My\UserBundle\Entity\Ville $ville
+     * @return Membre
+     */
+    public function setVille(\My\UserBundle\Entity\Ville $ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return \My\UserBundle\Entity\Ville 
+     */
+    public function getVille()
+    {
+        return $this->ville;
     }
 }

@@ -34,7 +34,12 @@ class Enchere
      * @ORM\Column(name="date", type="datetime")
      */
     private $date;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="My\UserBundle\Entity\Membre")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $membre;
 
     /**
      * Get id
@@ -90,5 +95,28 @@ class Enchere
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set membre
+     *
+     * @param \My\UserBundle\Entity\Membre $membre
+     * @return Enchere
+     */
+    public function setMembre(\My\UserBundle\Entity\Membre $membre)
+    {
+        $this->membre = $membre;
+
+        return $this;
+    }
+
+    /**
+     * Get membre
+     *
+     * @return \My\UserBundle\Entity\Membre 
+     */
+    public function getMembre()
+    {
+        return $this->membre;
     }
 }

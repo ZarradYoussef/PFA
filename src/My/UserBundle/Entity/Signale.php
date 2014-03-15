@@ -35,7 +35,12 @@ class Signale
      */
     private $raison;
 
-
+    /**
+     * @ORM\ManyToOne(targetEntity="My\UserBundle\Entity\Membre")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $membre;
+    
     /**
      * Get id
      *
@@ -90,5 +95,28 @@ class Signale
     public function getRaison()
     {
         return $this->raison;
+    }
+
+    /**
+     * Set membre
+     *
+     * @param \My\UserBundle\Entity\Membre $membre
+     * @return Signale
+     */
+    public function setMembre(\My\UserBundle\Entity\Membre $membre)
+    {
+        $this->membre = $membre;
+
+        return $this;
+    }
+
+    /**
+     * Get membre
+     *
+     * @return \My\UserBundle\Entity\Membre 
+     */
+    public function getMembre()
+    {
+        return $this->membre;
     }
 }

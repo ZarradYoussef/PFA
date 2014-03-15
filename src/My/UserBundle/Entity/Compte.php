@@ -27,7 +27,12 @@ class Compte
      * @ORM\Column(name="solde", type="float")
      */
     private $solde;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="My\UserBundle\Entity\Membre")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $membre;
 
     /**
      * Get id
@@ -60,5 +65,28 @@ class Compte
     public function getSolde()
     {
         return $this->solde;
+    }
+
+    /**
+     * Set membre
+     *
+     * @param \My\UserBundle\Entity\Membre $membre
+     * @return Compte
+     */
+    public function setMembre(\My\UserBundle\Entity\Membre $membre)
+    {
+        $this->membre = $membre;
+
+        return $this;
+    }
+
+    /**
+     * Get membre
+     *
+     * @return \My\UserBundle\Entity\Membre 
+     */
+    public function getMembre()
+    {
+        return $this->membre;
     }
 }

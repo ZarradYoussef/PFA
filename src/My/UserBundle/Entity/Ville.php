@@ -21,6 +21,7 @@ class Ville
      */
     private $id;
 
+    
     /**
      * @var string
      *
@@ -34,7 +35,12 @@ class Ville
      * @ORM\Column(name="code_postale", type="string", length=30)
      */
     private $codePostale;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="My\UserBundle\Entity\Pays")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $pays;
 
     /**
      * Get id
@@ -90,5 +96,28 @@ class Ville
     public function getCodePostale()
     {
         return $this->codePostale;
+    }
+
+    /**
+     * Set pays
+     *
+     * @param \My\UserBundle\Entity\Pays $pays
+     * @return Ville
+     */
+    public function setPays(\My\UserBundle\Entity\Pays $pays)
+    {
+        $this->pays = $pays;
+
+        return $this;
+    }
+
+    /**
+     * Get pays
+     *
+     * @return \My\UserBundle\Entity\Pays 
+     */
+    public function getPays()
+    {
+        return $this->pays;
     }
 }
