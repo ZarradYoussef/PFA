@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Signale
 {
     /**
+     * @ORM\ManyToOne(targetEntity="My\UserBundle\Entity\Produit",inversedBy="signales")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $produit;
+    
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")

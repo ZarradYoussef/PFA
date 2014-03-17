@@ -68,7 +68,12 @@ class Membre
      * @ORM\JoinColumn(nullable=false)
      */
     private $ville;
-
+    
+     /**
+     * @ORM\OneToOne(targetEntity="My\UserBundle\Entity\Suivre",cascade={"persist"})
+     */
+    private $suivre;
+    
     /**
      * Get id
      *
@@ -238,5 +243,28 @@ class Membre
     public function getVille()
     {
         return $this->ville;
+    }
+
+    /**
+     * Set suivre
+     *
+     * @param \My\UserBundle\Entity\Suivre $suivre
+     * @return Membre
+     */
+    public function setSuivre(\My\UserBundle\Entity\Suivre $suivre = null)
+    {
+        $this->suivre = $suivre;
+
+        return $this;
+    }
+
+    /**
+     * Get suivre
+     *
+     * @return \My\UserBundle\Entity\Suivre 
+     */
+    public function getSuivre()
+    {
+        return $this->suivre;
     }
 }

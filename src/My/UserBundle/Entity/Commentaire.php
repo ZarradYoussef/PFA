@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Commentaire
 {
     /**
+     * @ORM\ManyToOne(targetEntity="My\UserBundle\Entity\Produit",inversedBy="commentaires")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $produit;
+    
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")

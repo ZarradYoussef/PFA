@@ -34,8 +34,12 @@ class Transaction
      * @ORM\Column(name="date", type="datetime")
      */
     private $date;
-
-
+    
+    /**
+     * @ORM\OneToOne(targetEntity="My\UserBundle\Entity\Enchere",cascade={"persist"})
+     */
+    private $enchere;
+    
     /**
      * Get id
      *
@@ -90,5 +94,28 @@ class Transaction
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set enchere
+     *
+     * @param \My\UserBundle\Entity\Enchere $enchere
+     * @return Transaction
+     */
+    public function setEnchere(\My\UserBundle\Entity\Enchere $enchere = null)
+    {
+        $this->enchere = $enchere;
+
+        return $this;
+    }
+
+    /**
+     * Get enchere
+     *
+     * @return \My\UserBundle\Entity\Enchere 
+     */
+    public function getEnchere()
+    {
+        return $this->enchere;
     }
 }
